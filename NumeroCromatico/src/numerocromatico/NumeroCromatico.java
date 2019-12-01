@@ -19,7 +19,7 @@ public class NumeroCromatico {
     private LinkedList<Integer> adj[]; //Lista de adyacencia
 
     //Costructor 
-    NumeroCromatico(int v) {
+    public NumeroCromatico(int v) {
         V = v;
         adj = new LinkedList[v];
         for (int i = 0; i < v; ++i) {
@@ -28,14 +28,14 @@ public class NumeroCromatico {
     }
 
     //Función para agregar una arista al gráfico
-    void agregarArista(int v, int w) {
+    public void agregarArista(int v, int w) {
         adj[v].add(w);
         adj[w].add(v); //El gráfico no está dirigido
     }
 
     /* Asigna colores (a partir de 0) a todos los vértices y
        imprime la asignación de colores */
-    void asignarColores() {
+    public void asignarColores() {
         int resultado[] = new int[V];
 
         // Inicialice todos los vértices como no asignados
@@ -93,20 +93,9 @@ public class NumeroCromatico {
         g1.agregarArista(1, 3);
         g1.agregarArista(2, 3);
         g1.agregarArista(3, 4);
-        System.out.println("Coloring of graph 1");
+        System.out.println("Coloración de grafos.");
         g1.asignarColores();
-
-        System.out.println();
-        NumeroCromatico g2 = new NumeroCromatico(5);
-        g2.agregarArista(0, 1);
-        g2.agregarArista(0, 2);
-        g2.agregarArista(1, 2);
-        g2.agregarArista(1, 4);
-        g2.agregarArista(2, 4);
-        g2.agregarArista(4, 3);
-        System.out.println("Coloring of graph 2 ");
-        g2.asignarColores();
     }
 }
-// This code is contributed by Aakash Hasija 
+
 
